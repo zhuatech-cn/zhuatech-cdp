@@ -9,3 +9,4 @@
 | GET | `/api/admin/work-orders` | 激活任务清单 |
 | GET | `/api/shopfloor/dashboard` | 工程师任务工作台 |
 | POST | `/api/shopfloor/work-orders/{id}/reports` | 提交激活结果 |
+| POST | `/api/admin/activation-readiness` | 评估客户分群激活就绪度 |
