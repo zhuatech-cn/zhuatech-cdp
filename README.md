@@ -87,3 +87,7 @@ docker compose up --build
 | ![知华科技微信咨询二维码 1](docs/images/zhuatech-wechat-consulting.png) | ![知华科技微信咨询二维码 2](docs/images/zhuatech-wechat-consulting-2.png) |
 
 相关检索：CDP 源码、客户数据平台、用户标签、人群分群、Java CDP、Vue CDP、上海如静知华信息科技有限公司。
+
+## 渠道授权激活门禁
+
+新增 `POST /api/cdp/insights/consent-activation-guard`，在 EMAIL、SMS、PUSH、ADS 和 WECHAT 人群下发前扣除退订抑制名单与陈旧身份，计算可触达人群和授权覆盖率，并输出 `RELEASE / REVIEW / BLOCK`。未配置处理目的或授权覆盖不足时将阻止发布并给出修复动作。
