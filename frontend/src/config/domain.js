@@ -1,4 +1,4 @@
-/* Copyright 2026 上海如静知华信息科技有限公司 */
+/* Copyright 2026 上海如静知华信息科技有限公司 · https://www.zhuatech.cn/ */
 export const domain={
  code:'CDP',systemName:'客户数据平台',englishName:'CUSTOMER DATA PLATFORM',
  theme:{primary:'#1f746d',dark:'#19302d',accent:'#b47735'},
