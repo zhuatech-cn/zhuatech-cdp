@@ -91,3 +91,7 @@ docker compose up --build
 ## 渠道授权激活门禁
 
 新增 `POST /api/cdp/insights/consent-activation-guard`，在 EMAIL、SMS、PUSH、ADS 和 WECHAT 人群下发前扣除退订抑制名单与陈旧身份，计算可触达人群和授权覆盖率，并输出 `RELEASE / REVIEW / BLOCK`。未配置处理目的或授权覆盖不足时将阻止发布并给出修复动作。
+
+## 企业级客户身份合并治理
+
+新增 `POST /api/enterprise/cdp/identity-merge-governance`，将匹配置信度、来源字段、授权、数据驻留、敏感标识与黄金档案责任统一纳入合并决策，返回 `AUTO_MERGE / REVIEW / BLOCKED`。详见 [身份合并说明](docs/ENTERPRISE_IDENTITY_MERGE.md)。
