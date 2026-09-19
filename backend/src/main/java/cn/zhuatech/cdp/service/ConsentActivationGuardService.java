@@ -9,8 +9,14 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+ */
 @Service
 public class ConsentActivationGuardService {
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public Result evaluate(Request request) {
         long conservativeEligible = Math.max(0,
             request.consentedAudienceSize() - request.suppressedAudienceSize() - request.staleIdentityCount());
@@ -31,12 +37,18 @@ public class ConsentActivationGuardService {
             withheldAudience, eligibleRate, decision, actions);
     }
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public record Request(@NotBlank String segmentCode,
                           @Pattern(regexp = "EMAIL|SMS|PUSH|ADS|WECHAT") String channel,
                           @Min(0) long audienceSize, @Min(0) long consentedAudienceSize,
                           @Min(0) long suppressedAudienceSize, @Min(0) long staleIdentityCount,
                           boolean purposeConfigured) {}
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public record Result(String segmentCode, String channel, long eligibleAudience,
                          long withheldAudience, double eligibleRate,
                          String decision, List<String> actions) {}

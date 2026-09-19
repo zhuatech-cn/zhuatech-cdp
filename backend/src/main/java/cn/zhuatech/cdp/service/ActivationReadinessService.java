@@ -6,8 +6,14 @@ import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.util.ArrayList;
 import java.util.List;
+/**
+ * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+ */
 @Service
 public class ActivationReadinessService {
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public Result evaluate(Request r){
         double identity=rate(r.identifiableProfiles(),r.audienceSize()), consent=rate(r.consentedProfiles(),r.audienceSize());
         double reachable=rate(r.reachableProfiles(),r.audienceSize()), stale=rate(r.staleProfiles(),r.audienceSize());
@@ -19,11 +25,23 @@ public class ActivationReadinessService {
         if(reachable<80)actions.add("清理无效触达地址并补充可用渠道"); if(stale>15)actions.add("刷新长期未更新的客户画像特征");
         return new Result(scale(identity),scale(consent),scale(reachable),scale(stale),scale(score),decision,actions);
     }
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     private double rate(int value,int total){return total==0?0:value*100.0/total;}
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     private double scale(double value){return BigDecimal.valueOf(value).setScale(2,RoundingMode.HALF_UP).doubleValue();}
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public record Request(@NotBlank String segmentId,@Positive int audienceSize,@PositiveOrZero int identifiableProfiles,
         @PositiveOrZero int consentedProfiles,@PositiveOrZero int reachableProfiles,@PositiveOrZero int staleProfiles,
         @Min(0) @Max(10) int channelCount){}
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public record Result(double identityRate,double consentRate,double reachableRate,double staleRate,double readinessScore,String decision,List<String> actions){}
 }
 

@@ -8,8 +8,14 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+ */
 @Service
 public class IdentityMergeGovernanceService {
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public Assessment assess(Request request) {
         List<String> blockers = new ArrayList<>();
         List<String> actions = new ArrayList<>();
@@ -31,12 +37,21 @@ public class IdentityMergeGovernanceService {
         return new Assessment(Decision.AUTO_MERGE, true, blockers, actions);
     }
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public record Request(@NotBlank String mergeRequestId, @Min(2) int candidateProfileCount,
                           @Min(0) @Max(100) int matchConfidence,
                           @Min(0) int sourceConflictCount, boolean consentConflict,
                           boolean dataResidencyCompatible, boolean sensitiveIdentifierConflict,
                           boolean goldenRecordOwnerAssigned) {}
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public record Assessment(Decision decision, boolean mergeable, List<String> blockers,
                              List<String> actions) {}
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public enum Decision { AUTO_MERGE, REVIEW, BLOCKED }
 }

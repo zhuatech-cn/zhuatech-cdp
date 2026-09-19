@@ -7,9 +7,15 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+/**
+ * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+ */
 class ConsentActivationGuardServiceTests {
     private final ConsentActivationGuardService service = new ConsentActivationGuardService();
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     @Test
     void reviewsActivationAfterConsentAndSuppressionFiltering() {
         var result = service.evaluate(new ConsentActivationGuardService.Request(
@@ -21,6 +27,9 @@ class ConsentActivationGuardServiceTests {
         assertTrue(result.actions().size() >= 2);
     }
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     @Test
     void blocksActivationWithoutConfiguredPurpose() {
         var result = service.evaluate(new ConsentActivationGuardService.Request(
